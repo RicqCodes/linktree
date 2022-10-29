@@ -20,15 +20,15 @@ const LinkSection = () => {
 
 export default LinkSection;
 
-const LinkContainer = styled.section`
+const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px;
   gap: 24px;
 
-  width: 1152px;
-  height: 576px;
+  /* width: 1152px;
+  height: 576px; */
 
   /* Inside auto layout */
 

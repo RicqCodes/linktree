@@ -17,7 +17,7 @@ html {
         color: #101828;
         font: inherit;
         font-family: "Inter",  sans-serif;
-        background-color: #f9f9f9;
+        background-color: #fff;
         line-height: 1;
         -webkit-font-smoothing: antialiased;
         width: 100%;

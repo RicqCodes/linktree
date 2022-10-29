@@ -9,12 +9,11 @@ const Profile = () => {
   return (
     <ProfileContainer>
       <Img id="profile__img"></Img>
-      {/* <h2>Prince Nwakanma</h2> */}
       <SocialContainer>
         <Twitter id="twitter">
-          {/* <img src={twitter} alt="twitter logo" /> */}
           <h2>@Dechain_dev</h2>
         </Twitter>
+        <ShareButton></ShareButton>
         <Slack id="slack">
           <img src={slack} alt="slack logo" />
           <p>@ricqcodes</p>
@@ -26,7 +25,7 @@ const Profile = () => {
 
 export default Profile;
 
-const ProfileContainer = styled.section`
+const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,8 +33,8 @@ const ProfileContainer = styled.section`
   gap: 24px;
   isolation: isolate;
 
-  width: 1152px;
-  height: 142px;
+  /* width: 1152px;
+  height: 142px; */
 
   /* Inside auto layout */
 
@@ -43,16 +42,6 @@ const ProfileContainer = styled.section`
   order: 0;
   align-self: stretch;
   flex-grow: 0;
-
-  /* margin-top: 8rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-
-  h2 {
-    margin-top: 2rem;
-  }
 `;
 
 const Img = styled.div`
@@ -65,28 +54,15 @@ const Img = styled.div`
   width: 8.8rem;
 
   background: url("https://i.imgur.com/0CTbzC8.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 275px;
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  z-index: 0;
-
-  /* img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    overflow: hidden;
-  } */
 `;
 
 const SocialContainer = styled.div`
-  /* width: 3rem; */
   display: flex;
   gap: 0.5rem;
-
-  /* margin-top: 2rem; */
 `;
 
 const Twitter = styled.div`
@@ -101,7 +77,6 @@ const Twitter = styled.div`
   height: 30px;
 
   /* Inside auto layout */
-
   flex: none;
   order: 1;
   align-self: stretch;
@@ -128,6 +103,23 @@ const Twitter = styled.div`
     order: 0;
     flex-grow: 1;
   }
+`;
+
+const ShareButton = styled.div`
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 208px;
+  top: -20px;
+
+  border: 1px dashed #d0d5dd;
+  border-radius: 20px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
 `;
 
 const Slack = styled(Twitter)`

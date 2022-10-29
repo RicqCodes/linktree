@@ -14,12 +14,29 @@ const Link = ({ info }) => {
 export default Link;
 
 const LinkContainer = styled.div`
-  width: 100%;
-  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 12px;
+
+  /* width: 1152px;
+  height: 76px; */
+
+  /* Shadow/xs */
+
+  filter: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.05));
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
 
   a:link,
   a:visited {
-    /* color: #101828;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -27,67 +44,19 @@ const LinkContainer = styled.div`
     padding: 24px 32px;
     gap: 8px;
 
-    width: 1152px;
-    height: 76px; */
 
-    /* Gray/200 */
+/* Gray/200 */
+background: #EAECF0;
 
-    /* background: #eaecf0; */
-    /* Gray/200 */
+border: 1px solid #EAECF0;
+border-radius: 8px;
 
-    /* border: 1px solid #eaecf0;
-    border-radius: 8px; */
+/* Inside auto layout */
 
-    /* Inside auto layout */
-
-    /* flex: none;
-    order: 0;
-    flex-grow: 1; */
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-    gap: 12px;
-
-    width: 1152px;
-    height: 76px;
-
-    /* Shadow/xs */
-
-    filter: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.05));
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 24px 32px;
-    gap: 8px;
-
-    width: 1152px;
-    height: 76px;
-
-    /* Gray/200 */
-
-    background: #eaecf0;
-    /* Gray/200 */
-
-    border: 1px solid #eaecf0;
-    border-radius: 8px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 1;
+flex: none;
+order: 0;
+flex-grow: 1;
+  }
 
     p {
       /* font-family: "Inter"; */
