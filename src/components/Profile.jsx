@@ -9,11 +9,11 @@ const Profile = () => {
   return (
     <ProfileContainer>
       <Img id="profile__img"></Img>
-      <h2>Prince Nwakanma</h2>
+      {/* <h2>Prince Nwakanma</h2> */}
       <SocialContainer>
         <Twitter id="twitter">
-          <img src={twitter} alt="twitter logo" />
-          <p>@Dechain_dev</p>
+          {/* <img src={twitter} alt="twitter logo" /> */}
+          <h2>@Dechain_dev</h2>
         </Twitter>
         <Slack id="slack">
           <img src={slack} alt="slack logo" />
@@ -27,11 +27,28 @@ const Profile = () => {
 export default Profile;
 
 const ProfileContainer = styled.section`
-  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+  isolation: isolate;
+
+  width: 1152px;
+  height: 142px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+
+  /* margin-top: 8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 
   h2 {
     margin-top: 2rem;
@@ -69,22 +86,47 @@ const SocialContainer = styled.div`
   display: flex;
   gap: 0.5rem;
 
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 `;
 
 const Twitter = styled.div`
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 0.3rem;
+  padding: 0px;
+  gap: 8px;
 
-  img {
-    width: 2rem;
-    height: 2rem;
-  }
+  width: 1152px;
+  height: 30px;
 
-  p {
-    font-size: 1rem;
-    opacity: 0.8;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  z-index: 1;
+
+  h2 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height, or 150% */
+
+    text-align: center;
+
+    /* Gray/900 */
+
+    color: #101828;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
   }
 `;
 

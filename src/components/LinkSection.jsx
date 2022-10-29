@@ -22,11 +22,18 @@ export default LinkSection;
 
 const LinkContainer = styled.section`
   display: flex;
-  margin: 3rem auto;
-  /* margin-top: 3rem; */
-  align-items: center;
-  gap: 1rem;
-  justify-content: center;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+
+  width: 1152px;
+  height: 576px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
 `;
