@@ -19,7 +19,7 @@ const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 
   /* @media (min-width: 343) {
     width: 34.3rem;

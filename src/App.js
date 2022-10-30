@@ -34,10 +34,9 @@ const AppContainer = styled.div`
   align-items: center;
   padding: 3rem 5rem 0;
 
-  /* @media (min-width: 375px) {
-    padding: 64px 0px 32px;
-    gap: 24px;
-  } */
+  @media (max-width: 34.6em) {
+    padding-top: 1rem;
+  }
 `;
 
 const MainSection = styled.div`
@@ -68,6 +67,7 @@ const MainSection = styled.div`
 
   @media (max-width: 34.6em) {
     ${AppContainer} & {
+      padding-top: 2rem;
       width: 45rem;
     }
   }

@@ -119,7 +119,7 @@ const Paragraph = styled.p`
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
-  right: 30rem;
+  right: 25rem;
   top: -2.1rem;
   display: none;
 
@@ -296,7 +296,7 @@ const DesktopShare = styled.div`
     border-radius: 20px;
   }
 
-  @media (max-width: 47.5em) {
+  @media (max-width: 55em) {
     display: none;
   }
 `;
@@ -304,7 +304,7 @@ const DesktopShare = styled.div`
 const MobileShare = styled.div`
   display: none;
 
-  @media (max-width: 47.5em) {
+  @media (max-width: 55em) {
     align-items: center;
     border: 1px dashed #d0d5dd;
     border-radius: 50%;

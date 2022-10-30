@@ -26,7 +26,7 @@ const Footer = () => {
       </figure>
       <p>HNG Internship 9 Frontend Task</p>
       <figure>
-        <Img></Img>
+        <img src="https://i.imgur.com/WOMD1vR.png" alt="" />
       </figure>
     </FooterContainer>
   );
@@ -44,10 +44,14 @@ const FooterContainer = styled.footer`
   padding: 3.2rem 0;
   width: 100%;
 
-  @media (max-width: 47.5em) {
+  @media (max-width: 55em) {
     flex-direction: column;
     gap: 3.2rem;
     align-items: flex-start;
+  }
+
+  @media (max-width: 34.6em) {
+    gap: 1.8rem;
   }
 
   figure,
@@ -60,17 +64,4 @@ const FooterContainer = styled.footer`
     color: #667085;
     font-weight: 400;
   }
-`;
-
-const Img = styled.div`
-  width: 22rem;
-  height: 4rem;
-  background: url("https://i.imgur.com/WOMD1vR.png");
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
 `;

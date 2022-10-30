@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Link = ({ info }) => {
   return (
     <LinkContainer>
-      <a href={info.link}>
+      <a title={info.subtext} href={info.link}>
         <p>{info.title}</p>
       </a>
     </LinkContainer>
@@ -33,7 +33,7 @@ const LinkContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 2rem 3.2rem;
-    gap: 8px;
+    gap: 12px;
     background: #eaecf0;
     border: 1px solid #eaecf0;
     border-radius: 8px;
@@ -46,13 +46,15 @@ const LinkContainer = styled.div`
     border-radius: 8px;
   }
 
-  a:hover {
-    background: #d0d5dd;
-    border: 1px solid #d0d5dd;
+  @media (hover: hover) and (any-pointer: fine) {
+    a:hover {
+      background: #d0d5dd;
+      border: 1px solid #d0d5dd;
 
-    /* Shadow/xs */
-    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-    border-radius: 8px;
+      /* Shadow/xs */
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+      border-radius: 8px;
+    }
   }
 
   a:disabled {

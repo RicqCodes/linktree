@@ -54,7 +54,7 @@ export default MoreLinkSection;
 const Container = styled.div`
   display: flex;
   align-items: center;
-  padding: 1.8px;
+  padding: 1.8rem;
   gap: 3.2rem;
   justify-content: center;
 
