@@ -71,4 +71,11 @@ const MainSection = styled.div`
       width: 45rem;
     }
   }
+
+  @media (max-width: 25.3em) {
+    ${AppContainer} & {
+      padding-top: 2rem;
+      width: 43rem;
+    }
+  }
 `;
