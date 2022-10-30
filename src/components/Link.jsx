@@ -4,7 +4,12 @@ import styled from "styled-components";
 const Link = ({ info }) => {
   return (
     <LinkContainer>
-      <a title={info.subtext} href={info.link}>
+      <a
+        title={info.subtext}
+        href={info.link}
+        target="_blank"
+        rel="noreferrer noopener"
+      >
         <p>{info.title}</p>
       </a>
     </LinkContainer>
