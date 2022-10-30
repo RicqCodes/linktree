@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import img from "../img/I4G.png";
-
 const Footer = () => {
   return (
     <FooterContainer>

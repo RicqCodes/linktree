@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import slack from "../img/slack-logo.png";
-
 const MoreLinkSection = () => {
   return (
     <Container>

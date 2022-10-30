@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 
-import img from "../img/pp.JPG";
-import twitter from "../img/twitter-logo.png";
 import slack from "../img/slack-logo.png";
 
 const Profile = () => {
