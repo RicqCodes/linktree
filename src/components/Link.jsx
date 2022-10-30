@@ -3,37 +3,34 @@ import styled from "styled-components";
 
 const Link = ({ info }) => {
   return (
-    <LinkContainer>
-      <a
-        title={info.subtext}
-        id={info.id}
-        href={info.link}
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <p>{info.title}</p>
-      </a>
-    </LinkContainer>
+    // <LinkContainer>
+    <ALink
+      title={info.subtext}
+      id={info.id}
+      href={info.link}
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      {info.title}
+    </ALink>
   );
 };
 
 export default Link;
 
-const LinkContainer = styled.div`
+const ALink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: inherit;
+  font-weight: 500;
   filter: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.05));
 
-  p {
-    font-size: 1.4rem;
-    line-height: 2rem;
-  }
-
-  a:link,
-  a:visited {
+  &:link,
+  &:visited {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -46,14 +43,14 @@ const LinkContainer = styled.div`
     width: 100%;
   }
 
-  a:focus {
+  &:focus {
     border: 1px solid #98a2b3;
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #ebe9fe;
     border-radius: 8px;
   }
 
   @media (hover: hover) and (any-pointer: fine) {
-    a:hover {
+    &:hover {
       background: #d0d5dd;
       border: 1px solid #d0d5dd;
 
@@ -64,7 +61,7 @@ const LinkContainer = styled.div`
   }
 
   @media (hover: hover) and (any-pointer: coarse) {
-    a:hover {
+    &:hover {
       background: #d0d5dd;
       border: 1px solid #d0d5dd;
 
@@ -74,7 +71,7 @@ const LinkContainer = styled.div`
     }
   }
 
-  a:disabled {
+  &:disabled {
     background: #fcfcfd;
 
     /* Gray/100 */
@@ -85,22 +82,22 @@ const LinkContainer = styled.div`
     border-radius: 8px;
   }
 
-  p {
-    /* font-family: "Inter"; */
-    font-style: normal;
+  /* p { */
+  /* font-family: "Inter"; */
+  /* font-style: normal;
     font-weight: 500;
     font-size: 1.8rem;
     line-height: 2.8rem;
 
     display: flex;
     align-items: center;
-    text-align: center;
+    text-align: center; */
 
-    /* Gray/900 */
-    color: #101828;
+  /* Gray/900 */
+  /* color: #101828; */
 
-    /* Inside auto layout */
-    flex: none;
+  /* Inside auto layout */
+  /* flex: none;
     order: 0;
-  }
+  } */
 `;
