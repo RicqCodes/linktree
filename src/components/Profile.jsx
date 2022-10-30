@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 
 import img from "../img/pp.JPG";
@@ -8,47 +8,93 @@ import slack from "../img/slack-logo.png";
 const Profile = () => {
   return (
     <ProfileContainer>
-      <Img id="profile__img"></Img>
-      <SocialContainer>
-        <Twitter id="twitter">
-          <h2>Dechain_dev</h2>
-        </Twitter>
-        <ShareButton>
-          <div>
-            <svg
-              width="42"
-              height="42"
-              viewBox="0 0 42 42"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect x="1" y="1" width="40" height="40" rx="20" fill="white" />
-              <path
-                d="M28.3261 21.5062C28.5296 21.3318 28.6313 21.2446 28.6686 21.1409C28.7013 21.0498 28.7013 20.9502 28.6686 20.8591C28.6313 20.7554 28.5296 20.6682 28.3261 20.4938L21.2672 14.4433C20.917 14.1431 20.7419 13.9931 20.5937 13.9894C20.4648 13.9862 20.3418 14.0428 20.2603 14.1427C20.1667 14.2576 20.1667 14.4883 20.1667 14.9495V18.5289C18.3878 18.8401 16.7597 19.7415 15.5498 21.0949C14.2307 22.5704 13.501 24.48 13.5 26.4591V26.9691C14.3745 25.9157 15.4663 25.0638 16.7006 24.4716C17.7889 23.9495 18.9653 23.6403 20.1667 23.5588V27.0505C20.1667 27.5117 20.1667 27.7424 20.2603 27.8573C20.3418 27.9572 20.4648 28.0138 20.5937 28.0106C20.7419 28.0069 20.917 27.8569 21.2672 27.5567L28.3261 21.5062Z"
-                stroke="#98A2B3"
-                stroke-width="1.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <rect
-                x="1"
-                y="1"
-                width="40"
-                height="40"
-                rx="20"
-                stroke="#D0D5DD"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-dasharray="1 3"
-              />
-            </svg>
-          </div>
-        </ShareButton>
-        <Slack id="slack">
-          <img src={slack} alt="slack logo" />
-          <p>@ricqcodes</p>
-        </Slack>
-      </SocialContainer>
+      <DesktopShare device-type="desktop">
+        <svg
+          width="18"
+          height="16"
+          viewBox="0 0 18 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.3261 8.50617C16.5296 8.3318 16.6313 8.24461 16.6686 8.14086C16.7013 8.0498 16.7013 7.9502 16.6686 7.85914C16.6313 7.75539 16.5296 7.6682 16.3261 7.49383L9.26719 1.44331C8.917 1.14315 8.74191 0.993063 8.59367 0.989386C8.46483 0.986191 8.34177 1.04279 8.26035 1.14269C8.16667 1.25764 8.16667 1.48825 8.16667 1.94948V5.52886C6.38777 5.84007 4.75966 6.74146 3.54976 8.09489C2.23069 9.57043 1.50103 11.48 1.5 13.4591V13.9691C2.37445 12.9157 3.46626 12.0638 4.70063 11.4716C5.78891 10.9495 6.96535 10.6403 8.16667 10.5588V14.0505C8.16667 14.5117 8.16667 14.7424 8.26035 14.8573C8.34177 14.9572 8.46483 15.0138 8.59367 15.0106C8.74191 15.0069 8.917 14.8569 9.26719 14.5567L16.3261 8.50617Z"
+            stroke="#98A2B3"
+            stroke-width="1.66667"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        <svg
+          width="18"
+          height="16"
+          viewBox="0 0 18 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.3261 8.50617C16.5296 8.3318 16.6313 8.24461 16.6686 8.14086C16.7013 8.0498 16.7013 7.9502 16.6686 7.85914C16.6313 7.75539 16.5296 7.6682 16.3261 7.49383L9.26719 1.44331C8.917 1.14315 8.74191 0.993063 8.59367 0.989386C8.46483 0.986191 8.34177 1.04279 8.26035 1.14269C8.16667 1.25764 8.16667 1.48825 8.16667 1.94948V5.52886C6.38777 5.84007 4.75966 6.74146 3.54976 8.09489C2.23069 9.57043 1.50103 11.48 1.5 13.4591V13.9691C2.37445 12.9157 3.46626 12.0638 4.70063 11.4716C5.78891 10.9495 6.96535 10.6403 8.16667 10.5588V14.0505C8.16667 14.5117 8.16667 14.7424 8.26035 14.8573C8.34177 14.9572 8.46483 15.0138 8.59367 15.0106C8.74191 15.0069 8.917 14.8569 9.26719 14.5567L16.3261 8.50617Z"
+            stroke="#667085"
+            stroke-width="1.66667"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </DesktopShare>
+      <Paragraph>Share Link</Paragraph>
+      <MobileShare device-type="mobile">
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          strokeWidth="0"
+          viewBox="0 0 16 16"
+          // class="icon"
+          color="#98A2B3"
+          height="18"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ color: "rgb(152, 162, 179)" }}
+        >
+          <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path>
+        </svg>
+      </MobileShare>
+
+      <InfoContainer>
+        <Img id="profile__img">
+          <svg
+            width="22"
+            height="21"
+            viewBox="0 0 22 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 7.37722C1 7.0269 1 6.85174 1.01462 6.70421C1.1556 5.28127 2.28127 4.1556 3.70421 4.01462C3.85174 4 4.03636 4 4.40558 4C4.54785 4 4.61899 4 4.67939 3.99634C5.45061 3.94963 6.12595 3.46288 6.41414 2.746C6.43671 2.68986 6.45781 2.62657 6.5 2.5C6.54219 2.37343 6.56329 2.31014 6.58586 2.254C6.87405 1.53712 7.54939 1.05037 8.32061 1.00366C8.38101 1 8.44772 1 8.58114 1H13.4189C13.5523 1 13.619 1 13.6794 1.00366C14.4506 1.05037 15.126 1.53712 15.4141 2.254C15.4367 2.31014 15.4578 2.37343 15.5 2.5C15.5422 2.62657 15.5633 2.68986 15.5859 2.746C15.874 3.46288 16.5494 3.94963 17.3206 3.99634C17.381 4 17.4521 4 17.5944 4C17.9636 4 18.1483 4 18.2958 4.01462C19.7187 4.1556 20.8444 5.28127 20.9854 6.70421C21 6.85174 21 7.0269 21 7.37722V15.2C21 16.8802 21 17.7202 20.673 18.362C20.3854 18.9265 19.9265 19.3854 19.362 19.673C18.7202 20 17.8802 20 16.2 20H5.8C4.11984 20 3.27976 20 2.63803 19.673C2.07354 19.3854 1.6146 18.9265 1.32698 18.362C1 17.7202 1 16.8802 1 15.2V7.37722Z"
+              stroke="#F9FAFB"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M11 15.5C13.2091 15.5 15 13.7091 15 11.5C15 9.29086 13.2091 7.5 11 7.5C8.79086 7.5 7 9.29086 7 11.5C7 13.7091 8.79086 15.5 11 15.5Z"
+              stroke="#F9FAFB"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Img>
+        <SocialContainer>
+          <Twitter id="twitter">
+            <h2>Dechain_dev</h2>
+          </Twitter>
+
+          <Slack id="slack">
+            <img src={slack} alt="slack logo" />
+            <p>@ricqcodes</p>
+          </Slack>
+        </SocialContainer>
+      </InfoContainer>
     </ProfileContainer>
   );
 };
@@ -56,25 +102,66 @@ const Profile = () => {
 export default Profile;
 
 const ProfileContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  padding-bottom: 1.2rem;
+  position: relative;
+`;
+
+const Paragraph = styled.p`
   align-items: center;
-  padding: 0px;
-  gap: 24px;
-  isolation: isolate;
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  padding: 10px 12px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  right: 30rem;
+  top: -2.1rem;
+  display: none;
 
-  /* width: 1152px;
-  height: 142px; */
+  &,
+  ::before {
+    background-color: #101828;
+    position: absolute;
+  }
 
-  /* Inside auto layout */
+  ::before {
+    border-radius: 1px;
+    box-shadow: 0 12px 16px -4px rgb(16 24 40 / 8%),
+      0 4px 6px -2px rgb(16 24 40 / 3%);
+    content: "";
+    height: 20px;
+    right: -3px;
+    -webkit-transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0);
+    transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0);
+    width: 20px;
+    z-index: -1;
+  }
 
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
+  @media (max-width: 47.5em) {
+    p {
+      position: absolute;
+      right: 6rem;
+      top: -3rem;
+    }
+  }
+`;
+
+const InfoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 2.4rem;
 `;
 
 const Img = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,7 +174,40 @@ const Img = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 275px;
+  border-radius: 27.5rem;
+
+  svg {
+    opacity: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    color: black;
+
+    position: absolute;
+    left: 36.33%;
+    bottom: 12.5%;
+  }
+
+  &:focus {
+    border: 5.5px solid #ebe9fe;
+    border-radius: 27.5rem;
+  }
+
+  &:hover {
+    background: linear-gradient(
+        0deg,
+        rgba(52, 64, 84, 0.75),
+        rgba(52, 64, 84, 0.75)
+      ),
+      url("https://i.imgur.com/0CTbzC8.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 27.5rem;
+
+    svg {
+      opacity: 1;
+    }
+  }
 `;
 
 const SocialContainer = styled.div`
@@ -96,6 +216,7 @@ const SocialContainer = styled.div`
 `;
 
 const Twitter = styled.div`
+  /* @media (min-width: 1152px) { */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -103,8 +224,8 @@ const Twitter = styled.div`
   padding: 0px;
   gap: 8px;
 
-  width: 1152px;
-  height: 30px;
+  max-width: 115.2rem;
+  /* height: 3rem; */
 
   /* Inside auto layout */
   flex: none;
@@ -117,8 +238,8 @@ const Twitter = styled.div`
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 2rem;
+    line-height: 3rem;
     /* identical to box height, or 150% */
 
     text-align: center;
@@ -132,37 +253,71 @@ const Twitter = styled.div`
     flex: none;
     order: 0;
     flex-grow: 1;
+    /* } */
+  }
+
+  @media (min-width: 343px) {
+    width: 34.3rem;
   }
 `;
 
-const ShareButton = styled.div`
+const DesktopShare = styled.div`
+  align-items: center;
+  border: 1px dashed #d0d5dd;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 35px;
+  width: 35px;
+  justify-content: center;
   position: absolute;
-  width: 40px;
-  height: 40px;
-  right: 308px;
-  top: 20px;
-  border-radius: 20px;
+  top: -2rem;
+  right: 20rem;
 
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-  z-index: 2;
+  svg:last-child {
+    display: none;
+  }
 
-  &div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  &:hover {
+    svg:first-child {
+      display: none;
+    }
+    svg:last-child {
+      display: flex;
+    }
+
+    & + ${Paragraph} {
+      display: flex;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 4px #f2f4f7;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 47.5em) {
+    display: none;
+  }
+`;
+
+const MobileShare = styled.div`
+  display: none;
+
+  @media (max-width: 47.5em) {
     align-items: center;
-    padding: 4px;
-
+    border: 1px dashed #d0d5dd;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    height: 35px;
+    width: 35px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 10rem;
     position: absolute;
-    left: 15%;
-    right: 15%;
-    top: 15%;
-    bottom: 15%;
-
-    border-radius: 12px;
+    top: -3rem;
+    right: -10rem;
   }
 `;
 

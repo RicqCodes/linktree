@@ -15,17 +15,13 @@ function App() {
         <ThemeProvider theme={theme}>
           <GlobalStyle />
           <MainSection>
-            <Content>
-              <Profile />
-              <LinkSection />
-            </Content>
-          </MainSection>
-          <SocialSection>
+            <Profile />
+            <LinkSection />
             <MoreLinkSection />
-          </SocialSection>
+          </MainSection>
+          <Footer />
         </ThemeProvider>
       </AppContainer>
-      <Footer />
     </Fragment>
   );
 }
@@ -36,54 +32,43 @@ const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 64px 112px;
-  gap: 24px;
+  padding: 3rem 5rem 0;
 
-  position: absolute;
-  left: 0px;
-  top: 0px;
+  /* @media (min-width: 375px) {
+    padding: 64px 0px 32px;
+    gap: 24px;
+  } */
 `;
 
-const MainSection = styled.section`
+const MainSection = styled.div`
+  /* @media (max-width: 1216px) { */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0px 32px;
-  gap: 32px;
+  gap: 2.5rem;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 
-  /* Inside auto layout */
+  ${AppContainer} & {
+    width: 100rem;
+  }
 
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-`;
+  @media (max-width: 67em) {
+    ${AppContainer} & {
+      width: 85rem;
+      margin-top: 3rem;
+    }
+  }
 
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 56px;
+  @media (max-width: 55em) {
+    ${AppContainer} & {
+      width: 65rem;
+    }
+  }
 
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-`;
-
-const SocialSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px 0px;
-  gap: 64px;
-  background: #fff;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+  @media (max-width: 34.6em) {
+    ${AppContainer} & {
+      width: 45rem;
+    }
+  }
 `;

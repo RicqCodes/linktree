@@ -6,13 +6,7 @@ import Link from "./Link";
 
 const LinkSection = () => {
   const links = data.map((info) => {
-    return (
-      <Link info={info} />
-      //   <a key={info.id} href={info.link}>
-      //     <h3>{info.title}</h3>
-      //     <span>{info.subtext}</span>
-      //   </a>
-    );
+    return <Link info={info} key={info.id} />;
   });
 
   return <LinkContainer>{links}</LinkContainer>;
@@ -21,19 +15,13 @@ const LinkSection = () => {
 export default LinkSection;
 
 const LinkContainer = styled.div`
+  /* @media (max-width: 115.2rem) { */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
-  gap: 24px;
+  gap: 2rem;
 
-  /* width: 1152px;
-  height: 576px; */
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+  /* @media (min-width: 343) {
+    width: 34.3rem;
+  } */
 `;
