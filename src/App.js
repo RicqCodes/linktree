@@ -40,7 +40,6 @@ const AppContainer = styled.div`
 `;
 
 const MainSection = styled.div`
-  /* @media (max-width: 1216px) { */
   display: flex;
   flex-direction: column;
   gap: 2.5rem;

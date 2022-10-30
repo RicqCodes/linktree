@@ -174,6 +174,7 @@ const Img = styled.div`
   padding: 0px;
   height: 8.8rem;
   width: 8.8rem;
+  cursor: pointer;
 
   background: url("https://i.imgur.com/0CTbzC8.jpg");
   background-position: center;
@@ -197,41 +198,37 @@ const Img = styled.div`
     border-radius: 27.5rem;
   }
 
-  @media (hover: hover) and (any-pointer: fine) {
-    &:hover {
-      background: linear-gradient(
-          0deg,
-          rgba(52, 64, 84, 0.75),
-          rgba(52, 64, 84, 0.75)
-        ),
-        url("https://i.imgur.com/0CTbzC8.jpg");
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      border-radius: 27.5rem;
+  &:hover {
+    background: linear-gradient(
+        0deg,
+        rgba(52, 64, 84, 0.75),
+        rgba(52, 64, 84, 0.75)
+      ),
+      url("https://i.imgur.com/0CTbzC8.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 27.5rem;
 
-      svg {
-        opacity: 1;
-      }
+    svg {
+      opacity: 1;
     }
   }
 
-  @media (hover: hover) and (any-pointer: coarse) {
-    &:hover {
-      background: linear-gradient(
-          0deg,
-          rgba(52, 64, 84, 0.75),
-          rgba(52, 64, 84, 0.75)
-        ),
-        url("https://i.imgur.com/0CTbzC8.jpg");
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      border-radius: 27.5rem;
+  &:hover {
+    background: linear-gradient(
+        0deg,
+        rgba(52, 64, 84, 0.75),
+        rgba(52, 64, 84, 0.75)
+      ),
+      url("https://i.imgur.com/0CTbzC8.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 27.5rem;
 
-      svg {
-        opacity: 1;
-      }
+    svg {
+      opacity: 1;
     }
   }
 `;
@@ -242,7 +239,6 @@ const SocialContainer = styled.div`
 `;
 
 const Twitter = styled.div`
-  /* @media (min-width: 1152px) { */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -250,36 +246,14 @@ const Twitter = styled.div`
   padding: 0px;
   gap: 8px;
 
-  max-width: 115.2rem;
-  /* height: 3rem; */
-
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-  z-index: 1;
-
   h2 {
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
     line-height: 3rem;
-    /* identical to box height, or 150% */
-
     text-align: center;
-
-    /* Gray/900 */
-
     color: #101828;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 1;
-    /* } */
   }
 
   @media (min-width: 343px) {

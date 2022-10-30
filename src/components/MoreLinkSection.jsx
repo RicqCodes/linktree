@@ -55,9 +55,4 @@ const Container = styled.div`
   padding: 1.8rem;
   gap: 3.2rem;
   justify-content: center;
-
-  /* @media (min-width: 375px) {
-    padding: 0 1.6rem;
-    width: 37.5rem;
-  } */
 `;
