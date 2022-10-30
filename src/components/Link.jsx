@@ -57,6 +57,17 @@ const LinkContainer = styled.div`
     }
   }
 
+  @media (hover: hover) and (any-pointer: coarse) {
+    a:hover {
+      background: #d0d5dd;
+      border: 1px solid #d0d5dd;
+
+      /* Shadow/xs */
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+      border-radius: 8px;
+    }
+  }
+
   a:disabled {
     background: #fcfcfd;
 
