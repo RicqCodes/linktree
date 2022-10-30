@@ -190,20 +190,41 @@ const Img = styled.div`
     border-radius: 27.5rem;
   }
 
-  &:hover {
-    background: linear-gradient(
-        0deg,
-        rgba(52, 64, 84, 0.75),
-        rgba(52, 64, 84, 0.75)
-      ),
-      url("https://i.imgur.com/0CTbzC8.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 27.5rem;
+  @media (hover: hover) and (any-pointer: fine) {
+    &:hover {
+      background: linear-gradient(
+          0deg,
+          rgba(52, 64, 84, 0.75),
+          rgba(52, 64, 84, 0.75)
+        ),
+        url("https://i.imgur.com/0CTbzC8.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 27.5rem;
 
-    svg {
-      opacity: 1;
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (hover: hover) and (any-pointer: coarse) {
+    a:hover {
+      background: linear-gradient(
+          0deg,
+          rgba(52, 64, 84, 0.75),
+          rgba(52, 64, 84, 0.75)
+        ),
+        url("https://i.imgur.com/0CTbzC8.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 27.5rem;
+
+      svg {
+        opacity: 1;
+      }
     }
   }
 `;
