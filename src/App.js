@@ -68,14 +68,7 @@ const MainSection = styled.div`
   @media (max-width: 34.6em) {
     ${AppContainer} & {
       padding-top: 2rem;
-      width: 45rem;
-    }
-  }
-
-  @media (max-width: 25.3em) {
-    ${AppContainer} & {
-      padding-top: 2rem;
-      width: 43rem;
+      width: 41rem;
     }
   }
 `;
