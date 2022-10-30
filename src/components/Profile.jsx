@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
 import slack from "../img/slack-logo.png";
 
 const Profile = () => {
+  const focusRef = useRef(null);
+
+  const onClick = () => {
+    focusRef.current.focus();
+    console.log(focusRef);
+  };
+
   return (
     <ProfileContainer>
       <DesktopShare device-type="desktop">
@@ -58,7 +65,7 @@ const Profile = () => {
       </MobileShare>
 
       <InfoContainer>
-        <Img id="profile__img">
+        <Img id="profile__img" ref={focusRef} onClick={onClick}>
           <svg
             width="22"
             height="21"
@@ -210,7 +217,7 @@ const Img = styled.div`
   }
 
   @media (hover: hover) and (any-pointer: coarse) {
-    a:hover {
+    &:hover {
       background: linear-gradient(
           0deg,
           rgba(52, 64, 84, 0.75),

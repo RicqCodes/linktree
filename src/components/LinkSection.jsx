@@ -15,13 +15,8 @@ const LinkSection = () => {
 export default LinkSection;
 
 const LinkContainer = styled.div`
-  /* @media (max-width: 115.2rem) { */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-
-  /* @media (min-width: 343) {
-    width: 34.3rem;
-  } */
 `;

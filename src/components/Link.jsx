@@ -6,6 +6,7 @@ const Link = ({ info }) => {
     <LinkContainer>
       <a
         title={info.subtext}
+        id={info.id}
         href={info.link}
         target="_blank"
         rel="noreferrer noopener"
