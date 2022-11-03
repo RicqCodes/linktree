@@ -175,12 +175,6 @@ const Name = styled.div`
     }
   }
 
-  & input[type="text"]:filled {
-    /* background: #000; */
-    border: 1px solid #d0d5dd;
-    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  }
-
   & input[type="text"]:focus {
     border: 1px solid #84caff;
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
