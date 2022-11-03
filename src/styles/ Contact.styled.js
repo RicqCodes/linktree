@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 4rem 12rem;
+
+  @media (max-width: 55em) {
+    padding: 0;
+  }
 `;
 
 export const Intro = styled.div`
@@ -9,6 +13,10 @@ export const Intro = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  @media (max-width: 55em) {
+    margin-top: 3rem;
+  }
 
   & h1 {
     max-width: 85%;
@@ -82,6 +90,12 @@ export const Names = styled.div`
     gap: 2rem;
     /* justify-content: space-between; */
     align-items: center;
+  }
+
+  @media (max-width: 55em) {
+    flex-direction: column;
+    gap: 3.2rem;
+    align-items: flex-start;
   }
 `;
 
