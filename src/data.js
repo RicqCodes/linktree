@@ -38,4 +38,10 @@ export const data = [
     subtext: "Learn indepth rules in designing with this popular book!",
     id: "book__design",
   },
+  {
+    title: "Contact",
+    link: "/contact",
+    subtext: "",
+    id: "contact",
+  },
 ];

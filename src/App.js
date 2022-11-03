@@ -1,73 +1,27 @@
-import { Fragment } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./styles/generalStyle";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Profile from "./components/Profile";
-import LinkSection from "./components/LinkSection";
-import MoreLinkSection from "./components/MoreLinkSection";
 import { theme } from "./styles/theme";
-import Footer from "./components/Footer";
+import Home from "./components/pages/Home";
+import Contact from "./components/pages/Contact";
+
+import { AppContainer } from "./styles/AppContainer.styled";
 
 function App() {
   return (
-    <Fragment>
-      <AppContainer>
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <MainSection>
-            <Profile />
-            <LinkSection />
-            <MoreLinkSection />
-          </MainSection>
-          <Footer />
-        </ThemeProvider>
-      </AppContainer>
-    </Fragment>
+    <AppContainer>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
+    </AppContainer>
   );
 }
 
 export default App;
-
-const AppContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 5rem 0;
-
-  @media (max-width: 34.6em) {
-    padding-top: 1rem;
-  }
-`;
-
-const MainSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  justify-content: center;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-
-  ${AppContainer} & {
-    width: 100rem;
-  }
-
-  @media (max-width: 67em) {
-    ${AppContainer} & {
-      width: 85rem;
-      margin-top: 3rem;
-    }
-  }
-
-  @media (max-width: 55em) {
-    ${AppContainer} & {
-      width: 65rem;
-    }
-  }
-
-  @media (max-width: 34.6em) {
-    ${AppContainer} & {
-      padding-top: 2rem;
-      width: 38rem;
-    }
-  }
-`;
