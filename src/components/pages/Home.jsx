@@ -1,12 +1,11 @@
 import React, { Fragment } from "react";
-import styled from "styled-components";
 
 import Profile from "../Profile";
 import LinkSection from "../LinkSection";
 import MoreLinkSection from "../MoreLinkSection";
 import Footer from "../Footer";
 
-import { AppContainer, MainSection } from "../../styles/AppContainer.styled";
+import { MainSection } from "../../styles/AppContainer.styled";
 
 const Home = () => {
   return (
