@@ -14,7 +14,8 @@ import {
 import Footer from "../Footer";
 
 const Contact = () => {
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState({});
+  const [submit, setSubmit] = useState(false);
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -22,43 +23,47 @@ const Contact = () => {
     message: "",
   });
 
-  const [touched, setTouched] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    message: "",
-  });
+  const [touched, setTouched] = useState({});
+
+  const validation = (values) => {
+    const errors = {};
+
+    if (!values.first_name) {
+      console.log("omo");
+      errors.first_name = "First name is Required";
+    }
+
+    if (!values.last_name) {
+      errors.last_name = "Last name is required";
+    }
+
+    if (!values.email) {
+      errors.email = "Email is required";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    ) {
+      errors.email = "Invalid email address";
+    }
+
+    if (!values.message) {
+      errors.message = "Please enter a message";
+    } else if (values.message.length < 50) {
+      errors.message = "Minimum of 50 characters";
+    }
+    setErrors(errors);
+  };
 
   useEffect(() => {
-    const validation = (values) => {
-      const errors = {};
-
-      if (!values.first_name) {
-        errors.first_name = "First name is Required";
-      }
-
-      if (!values.last_name) {
-        errors.last_name = "Last name is required";
-      }
-
-      if (!values.email) {
-        errors.email = "Email is required";
-      } else if (
-        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-      ) {
-        errors.email = "Invalid email address";
-      }
-
-      if (!values.message) {
-        errors.message = "Please enter a message";
-      } else if (values.message.length < 50) {
-        errors.message = "Minimum of 50 characters";
-      }
-      setErrors(errors);
-    };
-
     validation(formData);
   }, [formData, touched]);
+
+  const onSubmit = (e, values) => {
+    e.preventDefault();
+    setSubmit(true);
+    console.log(values);
+    console.log(errors);
+    validation(values);
+  };
 
   const { first_name, last_name, email, message } = formData;
 
@@ -86,73 +91,79 @@ const Contact = () => {
               Hi there, contact me to ask me about anything you have in mind.
             </p>
           </Intro>
-          <Form onSubmit={(e) => e.preventDefault()}>
+          <Form onSubmit={(e) => onSubmit(e, formData)}>
             <Names>
               <Name>
-                <label for="first_name">First name</label>
+                <label htmlFor="first_name">First name</label>
                 <input
                   id="first_name"
                   type="text"
                   placeholder="Enter your first name"
-                  autocomplete="off"
+                  autoComplete="off"
                   value={first_name}
                   onChange={onChange}
                   onBlur={onBlur}
                 />
-                {errors.last_name && touched.first_name && (
+                {(errors.last_name && touched.first_name && (
                   <span className="error">{errors.first_name}</span>
-                )}
+                )) ||
+                  (submit && (
+                    <span className="error">{errors.first_name}</span>
+                  ))}
               </Name>
               <Name>
-                <label for="last_name">Last name</label>
+                <label htmlFor="last_name">Last name</label>
                 <input
                   id="last_name"
                   type="text"
                   placeholder="Enter your last name"
-                  autocomplete="off"
+                  autoComplete="off"
                   value={last_name}
                   onChange={onChange}
                   onBlur={onBlur}
                 />
-                {errors.last_name && touched.last_name && (
+                {(errors.last_name && touched.last_name && (
                   <span className="error">{errors.last_name}</span>
-                )}
+                )) ||
+                  (submit && <span className="error">{errors.last_name}</span>)}
               </Name>
             </Names>
             <Email>
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
               <input
                 id="email"
                 type="email"
                 placeholder="yourname@email.com"
-                autocomplete="off"
+                autoComplete="off"
                 value={email}
                 onChange={onChange}
                 onBlur={onBlur}
                 data-error={errors.email && touched.email && "error"}
               />
-              {errors.email && touched.email && (
+              {(errors.email && touched.email && (
                 <span className="error">{errors.email}</span>
-              )}
+              )) ||
+                (submit && <span className="error">{errors.email}</span>)}
             </Email>
             <Message>
-              <label for="message">Message</label>
+              <label htmlFor="message">Message</label>
               <textarea
                 id="message"
                 placeholder="Send me a message and i will reply you as soon as possible..."
-                autocomplete="off"
+                autoComplete="off"
                 value={message}
                 onChange={onChange}
                 onBlur={onBlur}
                 data-error={errors.message && touched.message ? true : false}
               />
-              {errors.message && touched.message && (
+              {(errors.message && touched.message && (
                 <span className="error">{errors.message}</span>
-              )}
+              )) ||
+                (submit && <span className="error">{errors.message}</span>)}
             </Message>
             <Select>
               <input id="checkbox_1" type="checkbox" />
-              <label for="checkbox_1">
+              <label htmlFor="checkbox_1">
                 You agree to provide your data to ricqcodes who may contact you
               </label>
             </Select>
