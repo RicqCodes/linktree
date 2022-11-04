@@ -112,7 +112,7 @@ export const Name = styled.div`
   .error {
     color: #f83f23;
     position: absolute;
-    bottom: -1.4rem;
+    bottom: -1.6rem;
     font-size: 1.2rem;
   }
 
@@ -155,7 +155,7 @@ export const Email = styled.div`
     .error {
       color: #f83f23;
       position: absolute;
-      bottom: -1.4rem;
+      bottom: -1.6rem;
       font-size: 1.2rem;
     }
 
@@ -201,7 +201,7 @@ export const Message = styled.div`
     .error {
       color: #f83f23;
       position: absolute;
-      bottom: -1.4rem;
+      bottom: -1.6rem;
       font-size: 1.2rem;
     }
 
