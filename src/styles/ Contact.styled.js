@@ -87,14 +87,14 @@ export const Names = styled.div`
   ${Form} & {
     display: flex;
     width: 100%;
-    gap: 2rem;
+    gap: 3rem;
     /* justify-content: space-between; */
     align-items: center;
   }
 
   @media (max-width: 55em) {
     flex-direction: column;
-    gap: 3.2rem;
+    /* gap: 3.2rem; */
     align-items: flex-start;
   }
 `;
