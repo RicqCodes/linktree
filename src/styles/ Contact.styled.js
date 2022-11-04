@@ -35,7 +35,7 @@ export const Form = styled.form`
   padding: 5rem 0;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   position: relative;
 
   button {
@@ -100,11 +100,19 @@ export const Names = styled.div`
 `;
 
 export const Name = styled.div`
+  position: relative;
   ${Form} ${Names} & {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+  }
+
+  .error {
+    color: #f83f23;
+    position: absolute;
+    bottom: -1.4rem;
+    font-size: 1.2rem;
   }
 
   & label {
@@ -139,9 +147,16 @@ export const Name = styled.div`
 
 export const Email = styled.div`
   ${Form} & {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    .error {
+      color: #f83f23;
+      position: absolute;
+      bottom: -1.4rem;
+      font-size: 1.2rem;
+    }
 
     & label {
       font-size: 1.2rem;
@@ -177,9 +192,17 @@ export const Email = styled.div`
 
 export const Message = styled.div`
   ${Form} & {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    .error {
+      color: #f83f23;
+      position: absolute;
+      bottom: -1.4rem;
+      font-size: 1.2rem;
+    }
 
     & label {
       font-size: 1.2rem;
