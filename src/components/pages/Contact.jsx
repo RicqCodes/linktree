@@ -99,7 +99,7 @@ const Contact = () => {
                   onChange={onChange}
                   onBlur={onBlur}
                 />
-                {errors && touched.first_name && (
+                {errors.last_name && touched.first_name && (
                   <span className="error">{errors.first_name}</span>
                 )}
               </Name>
@@ -114,7 +114,7 @@ const Contact = () => {
                   onChange={onChange}
                   onBlur={onBlur}
                 />
-                {errors && touched.last_name && (
+                {errors.last_name && touched.last_name && (
                   <span className="error">{errors.last_name}</span>
                 )}
               </Name>
@@ -129,9 +129,9 @@ const Contact = () => {
                 value={email}
                 onChange={onChange}
                 onBlur={onBlur}
-                data-error={errors && touched.email && "error"}
+                data-error={errors.email && touched.email && "error"}
               />
-              {errors && touched.email && (
+              {errors.email && touched.email && (
                 <span className="error">{errors.email}</span>
               )}
             </Email>
@@ -144,9 +144,9 @@ const Contact = () => {
                 value={message}
                 onChange={onChange}
                 onBlur={onBlur}
-                data-error={errors && touched.message && "error"}
+                data-error={errors.message && touched.message ? true : false}
               />
-              {errors && touched.message && (
+              {errors.message && touched.message && (
                 <span className="error">{errors.message}</span>
               )}
             </Message>

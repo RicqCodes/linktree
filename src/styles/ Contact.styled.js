@@ -225,7 +225,7 @@ export const Message = styled.div`
       color: #101828;
       font-size: 1.6rem;
 
-      &[data-error="error"] {
+      &[data-error="true"] {
         border: 1px solid #f89687;
         box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
 
@@ -246,9 +246,12 @@ export const Message = styled.div`
         line-height: 2.4rem;
       }
 
-      :focus {
-        border: 1px solid #84caff;
-        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #d1e9ff;
+      &[data-error="false"] {
+        :focus {
+          border: 1px solid #84caff;
+          box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05),
+            0px 0px 0px 4px #d1e9ff;
+        }
       }
     }
   }
