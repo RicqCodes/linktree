@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 4rem 12rem;
+  padding: 0 12rem;
 
   @media (max-width: 55em) {
     padding: 0;
@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const Intro = styled.div`
-  margin-top: 8rem;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -28,6 +28,7 @@ export const Intro = styled.div`
     margin-top: 2rem;
     font-size: 1.5rem;
     max-width: 100%;
+    font-weight: 500;
   }
 `;
 
