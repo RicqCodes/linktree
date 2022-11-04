@@ -32,17 +32,27 @@ const Contact = () => {
   useEffect(() => {
     const validation = (values) => {
       const errors = {};
+
       if (!values.first_name) {
         errors.first_name = "First name is Required";
       }
+
       if (!values.last_name) {
         errors.last_name = "Last name is required";
       }
+
       if (!values.email) {
         errors.email = "Email is required";
+      } else if (
+        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+      ) {
+        errors.email = "Invalid email address";
       }
+
       if (!values.message) {
         errors.message = "Please enter a message";
+      } else if (values.message.length < 50) {
+        errors.message = "Minimum of 50 characters";
       }
       setErrors(errors);
     };
@@ -119,6 +129,7 @@ const Contact = () => {
                 value={email}
                 onChange={onChange}
                 onBlur={onBlur}
+                data-error={errors && touched.email && "error"}
               />
               {errors && touched.email && (
                 <span className="error">{errors.email}</span>
@@ -133,6 +144,7 @@ const Contact = () => {
                 value={message}
                 onChange={onChange}
                 onBlur={onBlur}
+                data-error={errors && touched.message && "error"}
               />
               {errors && touched.message && (
                 <span className="error">{errors.message}</span>

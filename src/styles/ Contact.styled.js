@@ -224,6 +224,17 @@ export const Message = styled.div`
       color: #101828;
       font-size: 1.6rem;
 
+      &[data-error="error"] {
+        border: 1px solid #f89687;
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+
+        :focus {
+          border: 1px solid #f89687;
+          box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05),
+            0px 0px 0px 4px #ffd3cc;
+        }
+      }
+
       ::placeholder {
         font-family: "inter", sans-serif;
         align-items: flex-start;
