@@ -52,6 +52,10 @@ const Centered = styled.div`
 
 const ContentContainer = styled.div`
   padding: 1rem 8rem;
+
+  @media (max-width: 34.6em) {
+    padding: 1rem 3rem;
+  }
 `;
 
 const ModalContainer = styled.div`
@@ -66,7 +70,7 @@ const ModalContainer = styled.div`
 
   @media (max-width: 34.6em) {
     ${AppContainer} & {
-      width: 38rem;
+      width: 35rem;
     }
   }
 `;
