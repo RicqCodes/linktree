@@ -15,7 +15,11 @@ const LinkMain = ({ info }) => {
       </a>
     );
   } else {
-    return <Link to={info.link}>Contact</Link>;
+    return (
+      <Link id={info.id} to={info.link}>
+        Contact
+      </Link>
+    );
   }
 };
 
