@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -14,7 +13,7 @@ const Modal = ({ setIsOpen }) => {
         <ModalContainer>
           <ContentContainer>
             <ModalHeader>
-              <img src={message} alt />
+              <img src={message} alt="message icon" />
               <Heading>Thank you</Heading>
             </ModalHeader>
             <ModalBody>
