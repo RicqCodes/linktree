@@ -103,7 +103,6 @@ const Contact = React.memo(() => {
         });
 
         isOpen.current = true;
-        // setIsFormSubmitted(false);
       }
 
       if (errors) throw new Error();

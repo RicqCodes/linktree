@@ -22,9 +22,7 @@ const Modal = ({ setIsOpen }) => {
                 We will ge in touch and contact you soon!
               </p>
             </ModalBody>
-            <Button>
-              <Link to="/">Back to home</Link>
-            </Button>
+            <Link to="/">Back to home</Link>
           </ContentContainer>
         </ModalContainer>
       </Centered>
@@ -52,6 +50,21 @@ const Centered = styled.div`
 
 const ContentContainer = styled.div`
   padding: 1rem 8rem;
+
+  cursor: pointer;
+
+  a {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    padding: 1.3rem 2rem;
+    background-color: #1570ef;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+  }
 
   @media (max-width: 34.6em) {
     padding: 1rem 3rem;
@@ -111,22 +124,5 @@ const ModalBody = styled.div`
   p {
     font-size: 1.5rem;
     line-height: 1.5;
-  }
-`;
-
-const Button = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-  padding: 1.3rem 2rem;
-  background-color: #1570ef;
-  border-radius: 8px;
-  margin-bottom: 3rem;
-  cursor: pointer;
-
-  a {
-    color: #fff;
-    font-size: 1.4rem;
-    font-weight: 500;
   }
 `;
