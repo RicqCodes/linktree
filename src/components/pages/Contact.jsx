@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState, useRef } from "react";
 
 import { MainSection } from "../../styles/AppContainer.styled";
 import {
@@ -14,11 +14,11 @@ import {
 import Modal from "../Modal";
 import Footer from "../Footer";
 
-const Contact = () => {
+const Contact = React.memo(() => {
   const [errors, setErrors] = useState({});
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const isFormSubmitted = useRef(false);
   const [touched, setTouched] = useState({});
-  const [isOpen, setIsOpen] = useState(false);
+  const isOpen = useRef(false);
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -73,13 +73,12 @@ const Contact = () => {
 
   const onSubmit = (e, values) => {
     e.preventDefault();
-    setIsFormSubmitted(true);
+    isFormSubmitted.current = true;
 
     try {
       validation(values);
 
-      if (Object.keys(errors).length > 0 && setIsFormSubmitted) {
-        console.log("working");
+      if (Object.keys(errors).length > 0) {
         setTouched({
           first_name: true,
           last_name: true,
@@ -103,16 +102,14 @@ const Contact = () => {
           message: false,
         });
 
-        setIsOpen(true);
+        isOpen.current = true;
         // setIsFormSubmitted(false);
       }
 
       if (errors) throw new Error();
     } catch (err) {
-      setIsFormSubmitted(false);
+      isFormSubmitted.current = false;
     }
-
-    console.log(isFormSubmitted);
   };
 
   const { first_name, last_name, email, message } = formData;
@@ -193,9 +190,7 @@ const Contact = () => {
             </Message>
             <Select>
               <input
-                // checked={isFormSubmitted ? true : ""}
-                defaultChecked={isFormSubmitted}
-                // onChange={(e) => e.}
+                defaultChecked={isFormSubmitted.current}
                 id="checkbox_1"
                 type="checkbox"
                 required
@@ -211,9 +206,9 @@ const Contact = () => {
         </Container>
       </MainSection>
       <Footer />
-      {isOpen && <Modal setIsOpen={setIsOpen} />}
+      {isOpen.current && <Modal setIsOpen={isOpen.current} />}
     </Fragment>
   );
-};
+});
 
 export default Contact;

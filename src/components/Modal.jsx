@@ -6,7 +6,6 @@ import message from "../img/messages.svg";
 import { AppContainer } from "../styles/AppContainer.styled";
 
 const Modal = ({ setIsOpen }) => {
-  console.log("Yes");
   return (
     <ModalOuterContainer>
       <Centered>
@@ -24,7 +23,7 @@ const Modal = ({ setIsOpen }) => {
               </p>
             </ModalBody>
             <Button>
-              <Link to="/">Go to homePage</Link>
+              <Link to="/">Back to home</Link>
             </Button>
           </ContentContainer>
         </ModalContainer>
@@ -42,6 +41,7 @@ const ModalOuterContainer = styled.div`
   top: 0;
   left: 0;
   position: fixed;
+  overflow: hidden;
 `;
 const Centered = styled.div`
   position: absolute;
@@ -65,12 +65,12 @@ const ModalContainer = styled.div`
   background: white;
   color: white;
   z-index: 10;
-  /* border-radius: 16px; */
+  border-radius: 8px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
 
   @media (max-width: 34.6em) {
     ${AppContainer} & {
-      width: 35rem;
+      width: 38rem;
     }
   }
 `;
