@@ -11,11 +11,14 @@ import {
   Message,
   Select,
 } from "../../styles/ Contact.styled";
+import Modal from "../Modal";
 import Footer from "../Footer";
 
 const Contact = () => {
   const [errors, setErrors] = useState({});
-  const [submit, setSubmit] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [touched, setTouched] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -23,13 +26,10 @@ const Contact = () => {
     message: "",
   });
 
-  const [touched, setTouched] = useState({});
-
   const validation = (values) => {
     const errors = {};
 
     if (!values.first_name) {
-      console.log("omo");
       errors.first_name = "First name is Required";
     }
 
@@ -53,20 +53,6 @@ const Contact = () => {
     setErrors(errors);
   };
 
-  useEffect(() => {
-    validation(formData);
-  }, [formData, touched]);
-
-  const onSubmit = (e, values) => {
-    e.preventDefault();
-    setSubmit(true);
-    console.log(values);
-    console.log(errors);
-    validation(values);
-  };
-
-  const { first_name, last_name, email, message } = formData;
-
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -80,6 +66,56 @@ const Contact = () => {
       [e.target.id]: true,
     }));
   };
+
+  useEffect(() => {
+    validation(formData);
+  }, [formData, touched]);
+
+  const onSubmit = (e, values) => {
+    e.preventDefault();
+    setIsFormSubmitted(true);
+
+    try {
+      validation(values);
+
+      if (Object.keys(errors).length > 0 && setIsFormSubmitted) {
+        console.log("working");
+        setTouched({
+          first_name: true,
+          last_name: true,
+          email: true,
+          message: true,
+        });
+      }
+
+      if (Object.keys(errors).length === 0) {
+        setFormData({
+          first_name: "",
+          last_name: "",
+          email: "",
+          message: "",
+        });
+
+        setTouched({
+          first_name: false,
+          last_name: false,
+          email: false,
+          message: false,
+        });
+
+        setIsOpen(true);
+        // setIsFormSubmitted(false);
+      }
+
+      if (errors) throw new Error();
+    } catch (err) {
+      setIsFormSubmitted(false);
+    }
+
+    console.log(isFormSubmitted);
+  };
+
+  const { first_name, last_name, email, message } = formData;
 
   return (
     <Fragment>
@@ -104,12 +140,9 @@ const Contact = () => {
                   onChange={onChange}
                   onBlur={onBlur}
                 />
-                {(errors.last_name && touched.first_name && (
+                {errors.first_name && touched.first_name && (
                   <span className="error">{errors.first_name}</span>
-                )) ||
-                  (submit && (
-                    <span className="error">{errors.first_name}</span>
-                  ))}
+                )}
               </Name>
               <Name>
                 <label htmlFor="last_name">Last name</label>
@@ -122,10 +155,9 @@ const Contact = () => {
                   onChange={onChange}
                   onBlur={onBlur}
                 />
-                {(errors.last_name && touched.last_name && (
+                {errors.last_name && touched.last_name && (
                   <span className="error">{errors.last_name}</span>
-                )) ||
-                  (submit && <span className="error">{errors.last_name}</span>)}
+                )}
               </Name>
             </Names>
             <Email>
@@ -140,10 +172,9 @@ const Contact = () => {
                 onBlur={onBlur}
                 data-error={errors.email && touched.email && "error"}
               />
-              {(errors.email && touched.email && (
+              {errors.email && touched.email && (
                 <span className="error">{errors.email}</span>
-              )) ||
-                (submit && <span className="error">{errors.email}</span>)}
+              )}
             </Email>
             <Message>
               <label htmlFor="message">Message</label>
@@ -156,13 +187,19 @@ const Contact = () => {
                 onBlur={onBlur}
                 data-error={errors.message && touched.message ? true : false}
               />
-              {(errors.message && touched.message && (
+              {errors.message && touched.message && (
                 <span className="error">{errors.message}</span>
-              )) ||
-                (submit && <span className="error">{errors.message}</span>)}
+              )}
             </Message>
             <Select>
-              <input id="checkbox_1" type="checkbox" />
+              <input
+                // checked={isFormSubmitted ? true : ""}
+                defaultChecked={isFormSubmitted}
+                // onChange={(e) => e.}
+                id="checkbox_1"
+                type="checkbox"
+                required
+              />
               <label htmlFor="checkbox_1">
                 You agree to provide your data to ricqcodes who may contact you
               </label>
@@ -174,6 +211,7 @@ const Contact = () => {
         </Container>
       </MainSection>
       <Footer />
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
     </Fragment>
   );
 };
