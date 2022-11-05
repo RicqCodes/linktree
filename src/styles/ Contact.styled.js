@@ -315,8 +315,6 @@ export const Select = styled.div`
 
     input[type="checkbox"] {
       opacity: 0;
-      /* position: absolute;
-      left: -9999px; */
     }
 
     & input[type="checkbox"]:checked + label::before {

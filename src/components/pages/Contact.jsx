@@ -15,6 +15,7 @@ import Modal from "../Modal";
 import Footer from "../Footer";
 
 const Contact = React.memo(() => {
+  const scrollRef = useRef();
   const [errors, setErrors] = useState({});
   const isFormSubmitted = useRef(false);
   const [touched, setTouched] = useState({});
@@ -71,6 +72,11 @@ const Contact = React.memo(() => {
     validation(formData);
   }, [formData, touched]);
 
+  useEffect(() => {
+    if (scrollRef.current)
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   const onSubmit = (e, values) => {
     e.preventDefault();
     isFormSubmitted.current = true;
@@ -115,7 +121,7 @@ const Contact = React.memo(() => {
 
   return (
     <Fragment>
-      <MainSection>
+      <MainSection ref={scrollRef}>
         <Container>
           <Intro>
             <h1>Contact Me</h1>
