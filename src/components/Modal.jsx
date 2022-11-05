@@ -66,7 +66,7 @@ const ModalContainer = styled.div`
 
   @media (max-width: 34.6em) {
     ${AppContainer} & {
-      width: 42rem;
+      width: 38rem;
     }
   }
 `;
