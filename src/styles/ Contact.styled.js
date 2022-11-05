@@ -138,6 +138,11 @@ export const Name = styled.div`
       color: #667085;
       line-height: 2.4rem;
     }
+
+    &[data-error="true"] {
+      border: 1px solid #f89687;
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    }
   }
 
   & input[type="text"]:focus {
@@ -181,6 +186,11 @@ export const Email = styled.div`
         font-weight: 400;
         color: #667085;
         line-height: 2.4rem;
+      }
+
+      &[data-error="true"] {
+        border: 1px solid #f89687;
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
       }
     }
 

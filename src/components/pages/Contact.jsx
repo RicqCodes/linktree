@@ -136,6 +136,7 @@ const Contact = React.memo(() => {
                   value={first_name}
                   onChange={onChange}
                   onBlur={onBlur}
+                  data-error={errors.email && touched.first_name ? true : false}
                 />
                 {errors.first_name && touched.first_name && (
                   <span className="error">{errors.first_name}</span>
@@ -151,6 +152,7 @@ const Contact = React.memo(() => {
                   value={last_name}
                   onChange={onChange}
                   onBlur={onBlur}
+                  data-error={errors.email && touched.last_name ? true : false}
                 />
                 {errors.last_name && touched.last_name && (
                   <span className="error">{errors.last_name}</span>
@@ -167,7 +169,7 @@ const Contact = React.memo(() => {
                 value={email}
                 onChange={onChange}
                 onBlur={onBlur}
-                data-error={errors.email && touched.email && "error"}
+                data-error={errors.email && touched.email ? true : false}
               />
               {errors.email && touched.email && (
                 <span className="error">{errors.email}</span>
