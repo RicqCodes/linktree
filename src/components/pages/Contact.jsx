@@ -57,7 +57,7 @@ const Contact = React.memo(() => {
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
-      [e.target.id]: e.target.value.trim(),
+      [e.target.id]: e.target.value,
     }));
   };
 
