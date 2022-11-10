@@ -89,10 +89,10 @@ const Contact = React.memo(() => {
 
       if (Object.keys(errors).length > 0) {
         setTouched({
-          first_name: false,
-          last_name: false,
-          email: false,
-          message: false,
+          first_name: true,
+          last_name: true,
+          email: true,
+          message: true,
         });
       }
 
