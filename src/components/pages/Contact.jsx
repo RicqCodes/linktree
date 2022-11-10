@@ -86,10 +86,10 @@ const Contact = React.memo(() => {
 
       if (Object.keys(errors).length > 0) {
         setTouched({
-          first_name: true,
-          last_name: true,
-          email: true,
-          message: true,
+          first_name: false,
+          last_name: false,
+          email: false,
+          message: false,
         });
       }
 
@@ -141,7 +141,9 @@ const Contact = React.memo(() => {
                   value={first_name}
                   onChange={onChange}
                   onBlur={onBlur}
-                  data-error={errors.email && touched.first_name ? true : false}
+                  data-error={
+                    errors.first_name && touched.first_name ? true : false
+                  }
                 />
                 {errors.first_name && touched.first_name && (
                   <span className="error">{errors.first_name}</span>
@@ -157,7 +159,9 @@ const Contact = React.memo(() => {
                   value={last_name}
                   onChange={onChange}
                   onBlur={onBlur}
-                  data-error={errors.email && touched.last_name ? true : false}
+                  data-error={
+                    errors.last_name && touched.last_name ? true : false
+                  }
                 />
                 {errors.last_name && touched.last_name && (
                   <span className="error">{errors.last_name}</span>
